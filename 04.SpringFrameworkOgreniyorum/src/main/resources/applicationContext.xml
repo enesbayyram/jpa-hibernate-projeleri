@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xmlns:aop="http://www.springframework.org/schema/aop"
+		xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="
+			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+			http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-2.5.xsd">	   		
+	   		
+	<context:annotation-config/> <!-- @Required,@Autowired gibi anatasyonları kullanabilmek için tanımlarız. -->
+	<context:component-scan base-package="com.proje"/><!--@Companent anatasyonunu kullanabilmek için tanımladık. com.proje altında arayacaktır.-->
+	<aop:aspectj-autoproxy/> <!--@Aspect anatasyonunu kullanımını aktif edip aspect kullanmayı açmış olduk.  -->
+	
+	
+	<import resource="bean.xml"/> <!-- bean.xml 'i bu applicationContext.xml içersine import etmiş ve sanki burada tanımlanmış gibi kullanabiliriz artık. -->
+	<import resource="database.xml"/> <!-- database.xml artık buraya import ettim ve sanki burada tanımlanmış gibi kullanabilirim artık. -->
+	
+	
+			<!-- PROPERTY DOSYASI OKUMA ve BEAN İÇERİSİNE ATAMA İŞLEMİ -->
+<!-- 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 		<property name="location" value="db.properties"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="database" class="com.proje.model.Database"> -->
+<!-- 		<property name="url" value="${url}"></property> -->
+<!-- 		<property name="username" value="${username}"></property> -->
+<!-- 		<property name="password" value="${password}"></property> -->
+<!-- 	</bean> -->
+
+
+	<!-- Properties dosyanını türkçe veya ingilizce olarak okuyabilme.  -->
+<!-- 	<bean id="messages" class="org.springframework.context.support.ResourceBundleMessageSource"> -->
+<!-- 		<property name="basename" value="messages/msg"></property> -->
+<!-- 		<property name="defaultEncoding" value="UTF-8"></property> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="address1" class="com.proje.autowired.Address"> -->
+<!-- 		<property name="city" value="İstanbul"></property> -->
+<!-- 		<property name="district" value="Çekmeköy"></property> -->
+<!-- 		<property name="street" value="Dilek"></property> -->
+<!-- 		<property name="no"  value="27"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="employee" class="com.proje.autowired.Employee"> -->
+<!-- 		<property name="firstName" value="Enes"></property> -->
+<!-- 		<property name="lastName" value="Bayram"></property> -->
+<!-- 	</bean> -->
+</beans>

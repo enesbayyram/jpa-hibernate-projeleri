@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+	<properties>
+		<property name="path">C:\Users\sergul01\Desktop\</property>
+	</properties>
+
+	<Appenders>
+		<File name="file" fileName="${path}log4j.log">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</File>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+	</Appenders>
+
+	<Loggers>
+		<logger name="com.paketAll" level="info" additivity="false">
+			<appender-ref ref="console"/>
+			<appender-ref ref="file"/>
+		</logger>
+		
+		<logger name="com.PaketDebug" level="error" additivity="false">
+			<appender-ref ref="console"/>
+		</logger>
+	</Loggers>
+
+</Configuration>

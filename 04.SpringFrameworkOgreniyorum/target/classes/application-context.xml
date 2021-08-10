@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	   		http://www.springframework.org/schema/context
+	   		http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	
+	
+<!-- 	<!-- Kisi kisi =new Kisi(); --> -->
+<!-- 	<bean id="kisi" class="com.proje.component.Kisi"></bean> -->
+	
+	
+	<!-- AUTOWİRED ANATASYONU KULLANIMI ID değeri ile Referans isimleri eşleştirip birbirlerine bağlıyor... -->	
+<!-- 	<bean id="address1" class="com.proje.autowired.Address"> -->
+<!-- 		<property name="city" value="İstanbul"></property> -->
+<!-- 		<property name="district" value="Çekmeköy"></property> -->
+<!-- 		<property name="street" value="Aydınlar"></property> -->
+<!-- 		<property name="no" value="27"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="address2" class="com.proje.autowired.Address"> -->
+<!-- 		<property name="city" value="Kars"></property> -->
+<!-- 		<property name="district" value="Kağızman"></property> -->
+<!-- 		<property name="street" value="Dilek"></property> -->
+<!-- 		<property name="no" value="32"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="employee" class="com.proje.autowired.Employee"> -->
+<!-- 		<property name="firstName" value="Enes"></property> -->
+<!-- 		<property name="lastName" value="Bayram"></property> -->
+<!-- <!-- 		<property name="address" ref="address1"></property> --> -->
+<!-- 	</bean> -->
+<!-- 	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"></bean> -->
+	
+<!-- 	<bean id="mysqlConnection" class="com.proje.interfaceKullanimi.impl.MySQLConnection"></bean> -->
+<!-- 	<bean id="oracleConnection" class="com.proje.interfaceKullanimi.impl.OracleConnection"></bean> -->
+	
+	<!-- PROPERTİES DOSYASINI OKUYUP BEAN İÇİNDEKİ DEĞİŞKENLERE ATAMA İŞLEMİ -->
+	<!-- Database database =new Database(); -->
+	<!-- database.setUrl("test") -->
+<!-- 	<bean id="database" class="com.proje.model.Database"> -->
+<!-- 		<property name="url" value="${url}"></property> -->
+<!-- 		<property name="username" value="${usernamee}"></property> -->
+<!-- 		<property name="password" value="${password}"></property> -->
+<!-- 	</bean> -->
+	
+	
+	<!-- PropertyPlaceholderConfigurer p1 =new PropertyPlaceholderConfigurer() -->
+	<!-- p1.setLocation("db.properties") -->
+<!-- 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"> -->
+<!-- 		<property name="location" value="db.properties"></property> -->
+<!-- 	</bean>	 -->
+	
+	
+<!-- 	<bean id="dbConnectionInitMethod" class="com.proje.model.DBConnection" init-method="validation"> -->
+<!-- 		<property name="username" value="enes12"></property> -->
+<!-- 		<property name="password" value="123"></property> -->
+<!-- 		<property name="url" value="mysql:localhost"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean class="com.proje.beanFactoryPostProcessor.BeanFactory"></bean> -->
+<!-- 	<bean class="com.proje.beanPostProcessor.PostProcessor"></bean> -->
+	
+
+	<!-- BİRDEN FAZLA TİPİ DOLDURUP BEAN ATAMASI YAPMAK. -->
+<!-- 	<bean id="employee" class="com.proje.model.Employee"> -->
+<!-- 		<property name="firstName" value="Enes"></property> -->
+<!-- 		<property name="lastName" value="Bayram"></property> -->
+<!-- 		<property name="age" value="22"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="databaseEmployee" class="com.proje.model.Database"> -->
+<!-- 		<property name="url" value="mysql:localhost"></property> -->
+<!-- 		<property name="username" value="bayramenes"></property> -->
+<!-- 		<property name="password" value="2213"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="dbConnectWithInjection" class="com.proje.model.DBConnectionWithInjection"> -->
+<!-- 	  <property name="database" ref="databaseEmployee"></property> -->
+<!-- 	  <property name="employee" ref="employee"></property> -->
+<!-- 	</bean> -->
+	
+	
+	<!-- INHERİTANCE NASIL KULLANILIR -->
+	
+<!-- 	<bean id="baseDatabase" class="com.proje.model.Database"> -->
+<!-- 		<property name="username" value="jforce12"></property> -->
+<!-- 		<property name="password" value="jforce"></property> -->
+<!-- 		<property name="databaseList"> -->
+<!-- 			<list> -->
+<!-- 				<value>5 min connection</value> -->
+<!-- 				<value>10 max connection</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="mysqlDatabase" class="com.proje.model.Database" parent="baseDatabase"> -->
+<!-- 		<property name="url" value="mysql:localhost"></property> -->
+<!-- 		<property name="databaseList"> -->
+<!-- 			<list merge="true"> -->
+<!-- 				<value>Ek olarak değer eklendi mysql</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="oracleDatabase" class="com.proje.model.Database" parent="baseDatabase"> -->
+<!-- 		<property name="url" value="oracle:database"></property> -->
+<!-- 		<property name="databaseList"> -->
+<!-- 			<list merge="true"> -->
+<!-- 				<value>Ek olarak değer eklendi oracle</value> -->
+<!-- 			</list> -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+	
+	
+
+	
+<!-- 	<bean id="listeIslemleri" name="listeIslemleriNameIleAl" class="com.proje.model.ListeIslemleri"> -->
+<!-- 		<property name="firstName" value="Enes"></property> -->
+<!-- 		<property name="lastName" value="Bayram"></property> -->
+<!-- 		<property name="usersList"> -->
+<!-- 			<list> -->
+<!-- 				<value>Enes</value> -->
+<!-- 				<value>Ahmet</value> -->
+<!-- 				<value>Yusuf</value> -->
+<!-- 				<value>Bilal</value> -->
+<!-- 				<value>Yakup</value> -->
+<!-- 				<value>Sercan</value> -->
+<!-- 				<value>Adem</value> -->
+<!-- 			</list>		 -->
+<!-- 		</property> -->
+		
+<!-- 		<property name="usersMap"> -->
+<!-- 			<map> -->
+<!-- 				<entry key="1" value="Enes"/> -->
+<!-- 				<entry key="2" value="Ahmet"/> -->
+<!-- 				<entry key="3" value="Yusuf"/> -->
+<!-- 				<entry key="4" value="Mehmet"/> -->
+<!-- 				<entry key="5" value="Diyar"/> -->
+<!-- 			</map>		 -->
+<!-- 		</property> -->
+<!-- 	</bean> -->
+
+<!-- 	<bean id="dbConnectionPropertyMySql" class="com.proje.model.DBConnection"> -->
+<!-- 		<property name="url" value="jdbc:mysql:localhost:8080/veritabaniAdi"></property> -->
+<!-- 		<property name="username" value="root12"></property> -->
+<!-- 		<property name="password" value="1234"></property> -->
+<!-- 	</bean> -->
+	
+	
+ 	<!-- ID ve NAME değerlerine göre erişebiliriz. -->
+	
+<!-- 	<bean id="dbConnectionConstructorOracle" name="dbConnectionYapiciMetotIleOracle" class="com.proje.model.DBConnection"> -->
+<!-- 		<constructor-arg name="url" value="jdbc:oracle:localhost:8080/veritabaniadi"></constructor-arg> -->
+<!-- 		<constructor-arg name="username" value="enes55"></constructor-arg> -->
+<!-- 		<constructor-arg name="password" value="112233"></constructor-arg> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="database" name="databaseNameIleAl" class="com.proje.model.Database"> -->
+<!-- 		<property name="url" value="postgresql:localhost"></property> -->
+<!-- 		<property name="username" value="enes11"></property> -->
+<!-- 		<property name="password" value="123321"></property> -->
+<!-- 	</bean> -->
+	
+<!-- 	<bean id="dbConnectionWithInjection" class="com.proje.model.DBConnectionWithInjection"> -->
+<!-- 		<property name="database" ref="database"></property> -->
+<!-- 	</bean> -->
+	
+</beans>
